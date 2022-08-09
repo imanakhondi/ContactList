@@ -1,9 +1,10 @@
 import styles from "./contact.module.css"
 
-const Contact = (props) => {
+const Contact = ({contact}) => {
     return ( 
         <div className={styles.container}>
-                <p>{props.name}</p>
+                <p>{contact.name}</p>
+                <p>{contact.email}</p>
                 <p>delete</p>
             </div>
      );
