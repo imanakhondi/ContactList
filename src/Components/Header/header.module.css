@@ -1,0 +1,8 @@
+.container{
+    background-color: #FD2D01;
+    height: 60px;
+display: flex;
+align-items: center;
+justify-content:center;
+color: #fff;
+}
