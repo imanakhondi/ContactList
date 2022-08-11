@@ -1,0 +1,8 @@
+.button{
+    margin-top: 10px;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(187,19,226,1) 0%, rgba(187,19,226,1) 63%, rgba(98,25,226,1) 100%);
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}

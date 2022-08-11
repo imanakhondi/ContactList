@@ -1,19 +1,32 @@
 {
-  "posts": [
+  "contacts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "test",
+      "email": "iliyaava7@gmail.com",
+      "phone": "09153297600",
+      "address": "",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "test",
+      "email": "iliyaava7@gmail.com",
+      "phone": "09150104510",
+      "address": "",
+      "id": 2
+    },
+    {
+      "name": "iman",
+      "email": "iliyaava7@gmail.com",
+      "phone": "09150104510",
+      "address": "",
+      "id": 3
+    },
+    {
+      "name": "test",
+      "email": "test@gmail.com",
+      "phone": "09153297600",
+      "address": "",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
