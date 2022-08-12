@@ -4,6 +4,8 @@ import ContactList from "../ContactList/ContactList";
 import deleteContact from "../../services/deleteContactService";
 import Contact from "../Contact/Contact";
 import getAllContacts from "../../services/getAllContactsService"
+import { Link } from "react-router-dom";
+import styles from "./contactApp.module.css"
 
 const ContactApp = () => {
   const [contacts, setContacts] = useState([]);
@@ -51,7 +53,10 @@ const ContactApp = () => {
   // };
 
   return (
-    <div>
+    <div style={{margin: "100px"}}>
+      <Link to="/contacts">
+        <button className={styles.button}>Go To contacts</button>
+      </Link>
       <AddContact
         AddNewContactFun={AddNewContactFun}
         contact={contact}

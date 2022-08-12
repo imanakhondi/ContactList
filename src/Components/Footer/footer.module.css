@@ -1,8 +1,8 @@
 .container{
     background-color: #161B2F;
     height: 60px;
-    /* position: fixed;
-    bottom: 0; */
+    position: fixed;
+    bottom: 0;
     width: 100%;
     display: flex;
     align-items: center;
