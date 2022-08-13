@@ -27,11 +27,17 @@ button {
 .info{
     display: flex;
 }
-
-.trash{
+.btn{
     background-color: #22202F;
-    color: #FC6472;
     border: none;
     font-size: 16px;
     cursor: pointer;
+    margin-right: 5px;
+}
+.trash{
+    color: #FC6472;
+  
+}
+.edit{
+    color: #5BE7F5;
 }

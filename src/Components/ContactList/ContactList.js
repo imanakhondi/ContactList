@@ -10,10 +10,6 @@ const ContactList = ({ onDelete }) => {
   const [allContacts, setAllContacts] = useState(null);
   const [error, setError] = useState(false);
 
-  // const contacts = [
-  //   { name: "iman" },
-  //    { name: "kasra" }
-  //   ];
   const mystyle = {
     margin: "100px",
     width: "30rem",
@@ -32,8 +28,8 @@ const ContactList = ({ onDelete }) => {
     }
     getContacts();
   }, []);
-  const deleteContactfun = (id,e) => {
-    e.stopPropagation(); 
+  const deleteContactFun = (id, e) => {
+    e.stopPropagation();
     console.log("iman");
     console.log(id);
     const filteredContacts = contacts.filter((contact) => contact.id !== id);
@@ -46,16 +42,20 @@ const ContactList = ({ onDelete }) => {
     if (e.target.value === "") {
       setContacts(allContacts);
     } else {
-      const filteredContacts = allContacts.filter((contact) =>{
-console.log(Object.values(contact).join(" "));
-     return  Object.values(contact)
+      const filteredContacts = allContacts.filter((contact) => {
+        console.log(Object.values(contact).join(" "));
+        return Object.values(contact)
           .join(" ")
           .toLowerCase()
-          .includes(e.target.value.toLowerCase())
-      }
-      );
-      setContacts(filteredContacts)
+          .includes(e.target.value.toLowerCase());
+      });
+      setContacts(filteredContacts);
     }
+  };
+
+  const editContactFun = (contact) => {
+    console.log("imannnnnnnnnn");
+    console.log(contact);
   };
 
   const renderContacts = () => {
@@ -67,7 +67,6 @@ console.log(Object.values(contact).join(" "));
     if (error) {
       renderValue = (
         <p style={{ color: "#fff", fontWeight: "bold", fontSize: "20px" }}>
-          {" "}
           fetching data failed!!!
         </p>
       );
@@ -75,15 +74,13 @@ console.log(Object.values(contact).join(" "));
     }
 
     if (contacts && !error) {
-      console.log("kasraaaaaaaaaa");
       renderValue = contacts.map((contact, index) => (
-        <Link to={`/contact/${contact.id}`} key={index} >
         <Contact
           contact={contact}
-          onDelete={(e) => deleteContactfun(contact.id,e)}
-          
+          onDelete={(e) => deleteContactFun(contact.id, e)}
+          onEdite={() => editContactFun(contact)}
+          key={index}
         />
-        </Link>
       ));
     }
     return renderValue;
@@ -92,8 +89,9 @@ console.log(Object.values(contact).join(" "));
   return (
     <div style={mystyle}>
       <Link to="/">
-        <button className={styles.button}>Go To Home Page</button>
+        <button className={styles.button}>Add New Contact</button>
       </Link>
+
       <input type="text" placeholder="search" onChange={changeHandler} />
       <section>{renderContacts()}</section>
     </div>

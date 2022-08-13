@@ -1,9 +1,32 @@
-import styles from "./addContact.module.css";
-import addNewContact from "../../services/addNewContactsService";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import styles from "./editContact.module.css";
+import { useNavigate, useParams } from "react-router-dom";
+import getOneContact from "../../services/getOneContactsService";
+import updateContact from "../../services/updateContactsService";
 
-const AddContact = ({ AddNewContactFun, contact, setContact }) => {
+const EditContact = ({}) => {
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+  });
   const navigate = useNavigate();
+  const params = useParams();
+  const selectId = params.id;
+
+  useEffect(() => {
+    if (selectId) {
+      getOneContact(selectId)
+        .then((res) => setContact(res.data))
+        .catch();
+    }
+  }, []);
+
+  const editContactFun = async (contact, id) => {
+    const res = await updateContact(id, contact);
+    console.log(res.data);
+  };
 
   const submitHandler = (e) => {
     if (!contact.name) {
@@ -11,8 +34,8 @@ const AddContact = ({ AddNewContactFun, contact, setContact }) => {
       return;
     }
     e.preventDefault();
-    AddNewContactFun(contact);
-    addNewContact(contact).catch((error) => console.log(error));
+    editContactFun(contact, selectId);
+
     setContact({
       name: "",
       email: "",
@@ -74,11 +97,11 @@ const AddContact = ({ AddNewContactFun, contact, setContact }) => {
           />
         </div>
         <div className={styles.submit}>
-          <input type="submit" value="add"></input>
+          <input type="submit" value="update"></input>
         </div>
       </form>
     </div>
   );
 };
 // adrress
-export default AddContact;
+export default EditContact;
