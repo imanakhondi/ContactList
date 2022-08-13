@@ -6,3 +6,15 @@
     margin-bottom: 20px;
     cursor: pointer;
 }
+.addContact{
+    width: 600px;
+    margin: 20px;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .addContact{
+        min-width: 370px;
+    }
+}

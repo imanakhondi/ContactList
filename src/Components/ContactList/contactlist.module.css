@@ -9,3 +9,14 @@
 a{
     text-decoration:none
 }
+
+.contactList{
+    min-width: 600px;
+}
+
+@media screen and (max-width: 768px){
+
+    .contactList{
+        min-width: 370px;
+    }
+}

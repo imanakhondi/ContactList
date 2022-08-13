@@ -10,10 +10,9 @@ const ContactList = ({ onDelete }) => {
   const [allContacts, setAllContacts] = useState(null);
   const [error, setError] = useState(false);
 
-  const mystyle = {
-    margin: "100px",
-    width: "30rem",
-  };
+  // const mystyle = {
+  //   minWidth: "370px",
+  // };
 
   useEffect(() => {
     async function getContacts() {
@@ -87,7 +86,7 @@ const ContactList = ({ onDelete }) => {
   };
 
   return (
-    <div style={mystyle}>
+    <div className={styles.contactList}>
       <Link to="/">
         <button className={styles.button}>Add New Contact</button>
       </Link>

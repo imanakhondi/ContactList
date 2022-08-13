@@ -41,7 +41,7 @@ const ContactApp = () => {
   };
 
   return (
-    <div style={{ margin: "100px" }}>
+    <div className={styles.addContact}>
       <Link to="/contacts">
         <button className={styles.button}>Go To contacts</button>
       </Link>

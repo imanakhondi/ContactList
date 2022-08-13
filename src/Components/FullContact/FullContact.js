@@ -30,7 +30,7 @@ const FullContact = () => {
 
   if (contact) {
     return (
-      <div style={{ margin: "100px"} }>
+      <div style={{ margin: "20px"} }>
         <Link to="/contacts">
         <button className={styles.button}>Go To contacts</button>
       </Link>
